@@ -1,0 +1,46 @@
+body {
+  background-color: #4843D2;
+  overflow-x: hidden;
+}
+
+.logo {
+    width:26%;
+    margin-top: -6px;
+    height: 81px;
+
+}
+
+
+.navbar {
+  height: 86px;
+  background-color: #3430A5;
+}
+
+.nav-item {
+  color: white;
+  font-family: 'Baloo Bhaina', cursive;
+  font-size: 34px;
+  margin-right: 12px;
+  margin-left: -10px;
+}
+
+#items {
+  color:white;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 20px 10px 20px 10px;
+}
+
+.arabic{
+  font-family: 'Mada', sans-serif;
+}
+
+.info {
+  left: 15px;
+}
+
+.info-item {
+  margin-bottom: 14px;
+}

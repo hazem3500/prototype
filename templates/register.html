@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+
+
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+<link href="{{ url_for('static', filename='register.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+
+<div class="container">
+  <div class="row">
+    <div class="container">
+
+<img class="img-fluid d-block mx-auto logo"  src="https://i.imgur.com/hgVNfQB.png" alt="Translate UP" >
+
+      </div>
+    <h1 class="mx-auto prompt"> Register </h1>
+    </div>
+
+
+<div class="container card">
+<form action="{{ url_for('register') }}" method="post" enctype="multipart/form-data">
+
+
+        <fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="email" placeholder="E-Mail" type="email"/>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password" type="password"/>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="confirmation" placeholder="Retype Password" type="password"/>
+            </div>
+            <div class="form-group">
+                <input type="radio" name="gender" value="Male">
+                <label>Male</label>
+
+                <input type="radio" name="gender" value="Female">
+                <label>Female</label>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="age" placeholder="Age" type="number"/>
+            </div>
+            <!-- <div class="form-group">
+                <input class="form-control" name="iq" placeholder="IQ" type="number"/>
+            </div> -->
+            <div class="form-group" style="width:300px;">
+                <label>First Language</label>
+                <select style="width:300px;" name="lang">
+                    {% for lang in languages %}
+                        {% if lang.iso == "eng" %}
+                            <option selected="selected" value="{{lang.iso}}">{{lang.name}}</option>
+                        {% else %}
+                            <option value="{{lang.iso}}">{{lang.name}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+           <div class='form-group'>
+          <span class="btn btn-secondary btn-file mx-auto d-block glyphicon glyphicon-picture"> Profile image<input type="file" name='img' accept="image/gif, image/jpeg, image/png">
+</span>
+
+            <div class="form-group">
+                <a href="#" class="btn btn-lg btn-secondary aa">Get Health Information</a>
+            </div>
+
+            <div class="form-group">
+                <button class="btn button btn-secondary btn-lg d-block" type="submit">Sign Up</button>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+    </div>
+
+
+</body>
+</html>

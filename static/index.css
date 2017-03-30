@@ -1,0 +1,92 @@
+body {
+  background-color: #4843D2;
+  overflow-x: hidden;
+}
+
+.logo {
+    width:26%;
+    margin-top: -6px;
+    height: 81px;
+
+
+}
+
+
+.navbar {
+  height: 86px;
+  background-color: #3430A5;
+}
+
+.nav-item {
+  color: white;
+  font-family: 'Baloo Bhaina', cursive;
+  font-size: 34px;
+  margin-right: 12px;
+  margin-left: -10px;
+}
+
+#items {
+
+  color:white;
+
+}
+
+.input {
+  width: 60%;
+  margin-top: 5%;
+
+}
+
+.input-window {
+  font-size:30px;
+  font-family: 'Fredoka One', cursive;
+}
+
+.card {
+  font-size: 20px;
+  margin-top: 8%;
+  width:75%;
+
+}
+
+.card1{
+
+  font-family: 'Mada', sans-serif;
+}
+
+ .card2 {
+    font-family: 'Fredoka One', cursive;
+  }
+
+.arabic-words{
+  font-size:24px;
+}
+
+.english-words{
+  font-size:24px;
+}
+
+.btn-secondary {
+    font-family: 'Fredoka One', cursive;
+
+}
+
+#select {
+  height: 68px;
+  width: 0px;
+
+}
+
+#enter {
+
+width: 250px;
+margin-right: -2px;
+
+}
+
+select {
+
+  width:30px !important;
+  font-family: 'Fredoka One', cursive;
+
+}

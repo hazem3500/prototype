@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Profile : {{title}}</title>
+
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+<link href="{{ url_for('static', filename='profile.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Mada" rel="stylesheet">
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"><img class="logo" src="http://i.imgur.com/mCjqCHu.png" alt="logo"></a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ">
+      <a class="nav-item nav-link active pull-xs-right " href="{{ url_for('index') }}" id='items'>Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link pull-xs-right" href="{{ url_for('profile') }}" id='items'>Profile</a>
+      <a class="nav-item nav-link pull-xs-right" href="{{ url_for('logout') }}" id='items'>Sign Out</a>
+
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="card">
+    <div class="row">
+    <div class="col-lg-8 info">
+      <form>
+    <div class="form-group row">
+      <label for="lgFormGroupInput" class="col-sm-2 info-item col-form-label col-form-label-lg">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Full Name" value="{{name}}">
+      </div>
+    </div>
+  </form>
+      <form>
+    <div class="form-group row">
+      <label for="lgFormGroupInput" class="col-sm-2 info-item col-form-label col-form-label-lg">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="you@example.com" value="{{email}}">
+      </div>
+    </div>
+  </form>
+      <form>
+    <div class="form-group row">
+      <label for="lgFormGroupInput" class="col-sm-2 info-item col-form-label col-form-label-lg">Age</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="42" value="{{age}}">
+      </div>
+    </div>
+  </form>
+      <form>
+    <div class="form-group row">
+      <label for="lgFormGroupInput" class="col-sm-2 info-item col-form-label col-form-label-lg">Gender</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Male or Female" value="{{gender}}">
+      </div>
+    </div>
+  </form>
+      <form>
+    <div class="form-group row">
+      <label for="lgFormGroupInput" class="col-sm-2 info-item col-form-label col-form-label-lg">IQ</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="112" value="{{IQ}}">
+      </div>
+    </div>
+  </form>
+      </div>
+
+    <div class="col-lg-4">
+    <img src="{{ url_for('static', filename='uploads') }}/{{userimg}}" alt="..." class="img-thumbnail rounded float-right">
+  </div>
+      </div>
+    </div>
+
+  <div class="card">
+    <h1 class='text-center'>History</h1>
+
+    <div class="row">
+      <div class="col-lg-6 text-center arabic">
+        <h1>عربى</h1>
+        {% for word in words %}
+            <p>{{word.wordar.decode("utf-8")}}</p>
+        {% endfor %}
+        </div>
+        <div class="col-lg-6 text-center english">
+          <h1>English</h1>
+          {% for word in words %}
+              <p>{{word.worden}}</p>
+          {% endfor %}
+    </div>
+        </div>
+  </div>
+
+</div>
+
+
+</body>
+</html>

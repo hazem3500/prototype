@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>TranslateUP : {{title}} </title>
+
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+<link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Mada" rel="stylesheet">
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"><img class="logo" src="http://i.imgur.com/mCjqCHu.png" alt="logo"></a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ">
+      <a class="nav-item nav-link active pull-xs-right " href="{{ url_for('index') }}" id='items'>Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link pull-xs-right" href="{{ url_for('profile') }}" id='items'>Profile</a>
+      <a class="nav-item nav-link pull-xs-right" href="{{ url_for('logout') }}" id='items'>Sign Out</a>
+
+    </div>
+  </div>
+</nav>
+
+<div class='container'>
+  <form method="get">
+  <div class="input-group input mx-auto">
+      <input type="text" class="form-control input-window" id="enter" aria-label="Text input with segmented button dropdown" placeholder="Enter Word Here..." name = "word">
+      <select class="form-control form-control-lg" id="select" name="lang">
+          {% for lang in languages %}
+              {% if lang.iso == "eng" %}
+                  <option selected="selected" value="{{lang.iso}}">{{lang.name}}</option>
+              {% else %}
+                  <option value="{{lang.iso}}">{{lang.name}}</option>
+              {% endif %}
+          {% endfor %}
+</select>
+      <div class="input-group-btn">
+        <input type="submit" class="btn btn-secondary transalte" value="Translate">
+
+
+      </div>
+
+
+    </div>
+  </div>
+</form>
+{% if booa %}
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card card1 mx-auto text-center">
+      <h1 style="font-size:50px;">عربى</h1>
+      <p class="arabic-words">
+          {% for wordar in wordsar %}
+              <p>{{wordar}}</p>
+          {% endfor %}
+
+    </div>
+  </div>
+  <div class="col-lg-6  mx-auto text-center">
+    <div class="card card2">
+      <h1 style="font-size:40px; margin-top:10px">ENGLISH</h1>
+      <p class="english-words">
+
+          <h3>{{title}}</h3>
+          <br>
+          <h3>Definitions</h3>
+          <br>
+          {% for worden in wordsen %}
+              <p>{{worden}}</p>
+          {% endfor %}
+
+
+      </p>
+    </div>
+  </div>
+</div>
+{% endif %}
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+</html>

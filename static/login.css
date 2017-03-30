@@ -1,0 +1,48 @@
+.card
+{
+    /* center contents */
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    max-width: 30%;
+    padding-top:15px;
+
+
+}
+
+body {
+  background-color: #4843D2;
+}
+
+
+
+.btn {
+  margin-left: 20px;
+}
+
+.logo {
+
+    width:48%;
+
+
+}
+
+.prompt {
+
+  font-family: 'Baloo Bhaina', cursive;
+  color: white;
+  font-size: 80px;
+
+}
+
+.under {
+    width: 650px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.under .btn {
+    padding: 5px 15px;
+}

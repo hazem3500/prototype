@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{worden}}
+{% endblock %}
+
+{% block main %}
+
+    <img src="{{ url_for('static', filename='uploads') }}/{{[[}}userimg}}" alt="hi">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form method="get">
+        <input type="text" name="word" value="{{worden}}">
+        <select name="lang">
+            {% for lang in languages %}
+                {% if lang.iso == "eng" %}
+                    <option selected="selected" value="{{lang.iso}}">{{lang.name}}</option>
+                {% else %}
+                    <option value="{{lang.iso}}">{{lang.name}}</option>
+                {% endif %}
+            {% endfor %}
+          <!-- <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option> -->
+        </select>
+        <input type="submit" >
+
+    </form>
+    {% for wordar in wordsar %}
+        <p>{{wordar}}</p>
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Mada" rel="stylesheet">
+
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"><img class="logo" src="http://i.imgur.com/mCjqCHu.png" alt="logo"></a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ">
+        <a class="nav-item nav-link active pull-xs-right " href="{{ url_for('index') }}" id='items'>Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link pull-xs-right" href="{{ url_for('profile') }}" id='items'>Profile</a>
+        <a class="nav-item nav-link pull-xs-right" href="{{ url_for('logout') }}" id='items'>Sign Out</a>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class='container'>
+
+    <div class="input-group input mx-auto">
+        <input type="text" class="form-control input-window" aria-label="Text input with segmented button dropdown" placeholder="Enter Word Here...">
+        <div class="input-group-btn">
+          <button type="button" class="btn
+                                       btn-secondary transalte">Transalte</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card card1 mx-auto text-center">
+        <h1 style="font-size:50px;">عربى</h1>
+        <p class="arabic-words">
+            {% for wordar in wordsar %}
+                {{wordar}}<br>
+            {% endfor %}
+
+      </div>
+    </div>
+    <div class="col-lg-6  mx-auto text-center">
+      <div class="card card2">
+        <h1 style="font-size:40px; margin-top:10px">ENGLISH</h1>
+        <p class="english-words">
+            {% for worden in wordsen %}
+                {{worden}}
+            {% endfor %}
+
+
+        </p>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+{% endblock %}
